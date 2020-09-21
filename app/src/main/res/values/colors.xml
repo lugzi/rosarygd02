@@ -7,4 +7,6 @@
     <color name="white">#fff</color>
     <color name="niceblue">#7FDCE7</color>
     <color name="yellow"></color>
+    <color name="brownred">#671e1d</color>
+    <color name="softwhite">#eaeae4</color>
 </resources>

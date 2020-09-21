@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient1"
+    android:background="@color/white"
     tools:context=".counts">
 
 
@@ -12,469 +13,346 @@
         android:id="@+id/title_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginBottom="12dp"
         android:text="Your Counts"
-        android:textColor="#fff"
+        android:textColor="@color/brownred"
         android:textSize="60sp"
-        android:textStyle="bold"/>
+        android:fontFamily="@font/roboto"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <GridLayout
-            android:id="@+id/grid1"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView0"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:outlineAmbientShadowColor="@color/brownred"
+        app:cardBackgroundColor="@color/softwhite"
+        android:layout_margin="10dp"
+
+        app:cardCornerRadius="15dp"
+        app:cardElevation="8dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_view">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/title_view"
-            android:layout_margin="20dp"
-            android:columnCount="2"
-            android:rowCount="4">
+            android:paddingLeft="20dp">
+
+
+            <TextView
+                android:id="@+id/count0"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:fontFamily="@font/roboto"
+                android:gravity="center"
+                android:text="12345"
+                android:textAlignment="viewStart"
+                android:textColor="@color/brownred"
+                android:textSize="40sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/homename0"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/homename0"
+                android:layout_width="62dp"
+                android:layout_height="26dp"
+                android:layout_marginTop="150dp"
+                android:fontFamily="@font/roboto"
+                android:gravity="center_horizontal"
+                android:text="Count"
+                android:textAlignment="viewStart"
+                android:textColor="@color/brownred"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/intro0"
+                android:layout_width="160dp"
+                android:layout_height="34dp"
+                android:fontFamily="@font/roboto"
+                android:gravity="center_horizontal"
+                android:text="Total count of mantra Recited till now"
+                android:textAlignment="viewStart"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/homename0" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardView0">
+
+
+
+
+
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:columnCount="5"
+            android:rowCount="1">
 
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/card1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/cardView"
+                android:layout_width="321dp"
+                android:layout_height="match_parent"
                 android:layout_row="0"
-                android:layout_rowWeight="1"
                 android:layout_column="0"
-                android:layout_columnWeight="1"
-                android:layout_gravity="fill"
-                app:cardBackgroundColor="#ddf3f5"
-                app:cardCornerRadius="8dp"
+                android:outlineAmbientShadowColor="@color/brownred"
+                app:cardBackgroundColor="@color/softwhite"
+
+                app:cardCornerRadius="15dp"
                 app:cardElevation="8dp"
                 app:cardUseCompatPadding="true">
 
-                <LinearLayout
+
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_gravity="center_vertical|center_horizontal"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                    android:paddingLeft="20dp">
+
 
                     <TextView
-                        android:id="@+id/count1"
-                        android:layout_width="match_parent"
+                        android:id="@+id/count"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="monospace"
 
+                        android:layout_marginStart="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:fontFamily="@font/roboto"
                         android:gravity="center"
                         android:text="12345"
-                        android:textColor="#e94560"
-                        android:textSize="30sp"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/brownred"
+                        android:textSize="40sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/homename"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/homename"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="150dp"
+                        android:fontFamily="@font/roboto"
+                        android:gravity="center_horizontal"
+                        android:text="mani"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/brownred"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <View
-                        android:id="@+id/divider1"
-                        android:layout_width="match_parent"
-                        android:layout_height="2dp"
-                        android:background="#000000"
-                        app:layout_constraintBottom_toTopOf="@id/name1"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/count" />
-
                     <TextView
-                        android:id="@+id/name1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="mani"
-                        android:textSize="26sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
+                        android:id="@+id/intro"
+                        android:layout_width="160dp"
+                        android:layout_height="34dp"
+                        android:fontFamily="@font/roboto"
+                        android:gravity="center_horizontal"
+                        android:text="Total count of mantra Recited till now"
+                        android:textAlignment="viewStart"
+                        android:textColor="#000000"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/homename" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
             </androidx.cardview.widget.CardView>
 
+
             <androidx.cardview.widget.CardView
-                android:id="@+id/card2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/cardView2"
+                android:layout_width="321dp"
+                android:layout_height="match_parent"
                 android:layout_row="0"
-                android:layout_rowWeight="1"
                 android:layout_column="1"
-                android:layout_columnWeight="1"
-                android:layout_gravity="fill"
-                app:cardBackgroundColor="#ddf3f5"
-                app:cardCornerRadius="8dp"
+                android:outlineAmbientShadowColor="@color/brownred"
+                app:cardBackgroundColor="@color/softwhite"
+
+                app:cardCornerRadius="15dp"
                 app:cardElevation="8dp"
                 app:cardUseCompatPadding="true">
 
-                <LinearLayout
+
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_gravity="center_vertical|center_horizontal"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                    android:paddingLeft="20dp">
+
 
                     <TextView
                         android:id="@+id/count2"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="monospace"
 
+                        android:layout_marginStart="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:fontFamily="@font/roboto"
                         android:gravity="center"
                         android:text="12345"
-                        android:textColor="#e94560"
-                        android:textSize="30sp"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/brownred"
+                        android:textSize="40sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/homename2"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/homename2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="150dp"
+                        android:fontFamily="@font/roboto"
+                        android:gravity="center_horizontal"
+                        android:text="dolma"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/brownred"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <View
-                        android:id="@+id/divider2"
-                        android:layout_width="match_parent"
-                        android:layout_height="2dp"
-                        android:background="#000000"
-                        app:layout_constraintBottom_toTopOf="@id/name1"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/count" />
-
-
                     <TextView
-                        android:id="@+id/name2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="dolma"
-                        android:textSize="26sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
+                        android:id="@+id/intro2"
+                        android:layout_width="160dp"
+                        android:layout_height="34dp"
+                        android:fontFamily="@font/roboto"
+                        android:gravity="center_horizontal"
+                        android:text="Total count of mantra Recited till now"
+                        android:textAlignment="viewStart"
+                        android:textColor="#000000"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/homename2" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
             </androidx.cardview.widget.CardView>
 
+
             <androidx.cardview.widget.CardView
-                android:id="@+id/card3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="1"
-                android:layout_rowWeight="1"
-                android:layout_column="0"
-                android:layout_columnWeight="1"
-                android:layout_gravity="fill"
-                app:cardBackgroundColor="#ddf3f5"
-                app:cardCornerRadius="8dp"
+                android:id="@+id/cardView3"
+                android:layout_width="321dp"
+                android:layout_height="match_parent"
+                android:layout_row="0"
+                android:layout_column="2"
+                android:outlineAmbientShadowColor="@color/brownred"
+                app:cardBackgroundColor="@color/softwhite"
+                android:padding="10dp"
+
+                app:cardCornerRadius="15dp"
                 app:cardElevation="8dp"
                 app:cardUseCompatPadding="true">
 
-                <LinearLayout
+
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_gravity="center_vertical|center_horizontal"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                    android:paddingLeft="20dp">
+
 
                     <TextView
                         android:id="@+id/count3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="monospace"
-
-                        android:gravity="center"
-                        android:text="12345"
-                        android:textColor="#e94560"
-                        android:textSize="30sp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <View
-                        android:id="@+id/divider3"
-                        android:layout_width="match_parent"
-                        android:layout_height="2dp"
-                        android:background="#000000"
-                        app:layout_constraintBottom_toTopOf="@id/name1"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/count" />
-
-
-                    <TextView
-                        android:id="@+id/name3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+
+                        android:layout_marginStart="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:fontFamily="@font/roboto"
+                        android:gravity="center"
+                        android:text="12345"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/brownred"
+                        android:textSize="40sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/homename3"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/homename3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="150dp"
+                        android:fontFamily="@font/roboto"
+                        android:gravity="center_horizontal"
                         android:text="guru tsengak"
-                        android:textStyle="bold" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/card4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="1"
-                android:layout_rowWeight="1"
-                android:layout_column="1"
-                android:layout_columnWeight="1"
-                android:layout_gravity="fill"
-                app:cardBackgroundColor="#ddf3f5"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="8dp"
-                app:cardUseCompatPadding="true">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center_vertical|center_horizontal"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/count4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="monospace"
-
-                        android:gravity="center"
-                        android:text="12345"
-                        android:textColor="#e94560"
-                        android:textSize="30sp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <View
-                        android:id="@+id/divider4"
-                        android:layout_width="match_parent"
-                        android:layout_height="2dp"
-                        android:background="#000000"
-                        app:layout_constraintBottom_toTopOf="@id/name1"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/count" />
-
-
-                    <TextView
-                        android:id="@+id/name4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="jampelyang"
-                        android:textStyle="bold" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/card5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="2"
-                android:layout_rowWeight="1"
-                android:layout_column="0"
-                android:layout_columnWeight="1"
-                android:layout_gravity="fill"
-                app:cardBackgroundColor="#ddf3f5"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="8dp"
-                app:cardUseCompatPadding="true">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center_vertical|center_horizontal"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/count5"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="monospace"
-
-                        android:gravity="center"
-                        android:text="12345"
-                        android:textColor="#e94560"
-                        android:textSize="30sp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <View
-                        android:id="@+id/divider5"
-                        android:layout_width="match_parent"
-                        android:layout_height="2dp"
-                        android:background="#000000"
-                        app:layout_constraintBottom_toTopOf="@id/name1"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/count" />
-
-
-                    <TextView
-                        android:id="@+id/name5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="dali lama"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/brownred"
                         android:textSize="20sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/card6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="3"
-                android:layout_rowWeight="1"
-                android:layout_column="0"
-                android:layout_columnWeight="1"
-                android:layout_gravity="fill"
-                app:cardBackgroundColor="#ddf3f5"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="8dp"
-                app:cardUseCompatPadding="true">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center_vertical|center_horizontal"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/count7"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="monospace"
-
-                        android:gravity="center"
-                        android:text="12345"
-                        android:textColor="#e94560"
-                        android:textSize="30sp"
-                        app:layout_constraintEnd_toEndOf="parent"
+                        android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <View
-                        android:id="@+id/divider7"
-                        android:layout_width="match_parent"
-                        android:layout_height="2dp"
-                        android:background="#000000"
-                        app:layout_constraintBottom_toTopOf="@id/name1"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/count" />
-
-
                     <TextView
-                        android:id="@+id/name7"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="jesus"
-                        android:textSize="26sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/card7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="3"
-                android:layout_rowWeight="1"
-                android:layout_column="1"
-                android:layout_columnWeight="1"
-                android:layout_gravity="fill"
-                app:cardBackgroundColor="#ddf3f5"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="8dp"
-                app:cardUseCompatPadding="true">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center_vertical|center_horizontal"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/count8"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="monospace"
-
-                        android:gravity="center"
-                        android:text="12345"
-                        android:textColor="#e94560"
-                        android:textSize="30sp"
-                        app:layout_constraintEnd_toEndOf="parent"
+                        android:id="@+id/intro3"
+                        android:layout_width="160dp"
+                        android:layout_height="34dp"
+                        android:fontFamily="@font/roboto"
+                        android:gravity="center_horizontal"
+                        android:text="Total count of mantra Recited till now"
+                        android:textAlignment="viewStart"
+                        android:textColor="#000000"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <View
-                        android:id="@+id/divider8"
-                        android:layout_width="match_parent"
-                        android:layout_height="2dp"
-                        android:background="#000000"
-                        app:layout_constraintBottom_toTopOf="@id/name1"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/count" />
+                        app:layout_constraintTop_toBottomOf="@+id/homename3" />
 
 
-                    <TextView
-                        android:id="@+id/name8"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="jesus"
-                        android:textSize="26sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/card8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="2"
-                android:layout_rowWeight="1"
-                android:layout_column="1"
-                android:layout_columnWeight="1"
-                android:layout_gravity="fill"
-                app:cardBackgroundColor="#ddf3f5"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="8dp"
-                app:cardUseCompatPadding="true">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center_vertical|center_horizontal"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/count6"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="monospace"
-
-                        android:gravity="center"
-                        android:text="12345"
-                        android:textColor="#e94560"
-                        android:textSize="30sp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <View
-                        android:id="@+id/divider6"
-                        android:layout_width="match_parent"
-                        android:layout_height="2dp"
-                        android:background="#000000"
-                        app:layout_constraintBottom_toTopOf="@id/name1"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/count" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-                    <TextView
-                        android:id="@+id/name6"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="jesus"
-                        android:textSize="26sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
             </androidx.cardview.widget.CardView>
         </GridLayout>
 
+    </HorizontalScrollView>>
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
